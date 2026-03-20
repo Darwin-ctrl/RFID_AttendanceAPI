@@ -72,4 +72,8 @@ using (var scope = app.Services.CreateScope())
     }
 }
 
+// Enable Swagger for all environments
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.Run();
