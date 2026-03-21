@@ -4,6 +4,10 @@ using RFIDAttendanceAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// --- Para sa Render: gamitin ang PORT environment variable ---
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://*:{port}");
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
